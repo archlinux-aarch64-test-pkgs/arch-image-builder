@@ -213,7 +213,7 @@ class Pacman:
 				ret = self.ctx.run_external(cmds)
 				if ret != 0: raise OSError(f"wget failed with {ret}")
 				self.pacman_key.add_keys_from(keypath)
-				self.lsign_key(repo.keyid)
+				self.pacman_key.lsign_key(repo.keyid)
 			elif repo.keyid is not None:
 				self.pacman_key.recv_keys(repo.keyid)
 				self.pacman_key.lsign_key(repo.keyid)
