@@ -1,0 +1,17 @@
+distro:
+  name: Arch Linux
+  id: archlinux
+  identifier:
+    name: ArchLinux
+    id: arch
+pacman:
+  install:
+  - core/base
+sysconf:
+  hosts:
+  - 127.0.0.1 localhost
+  - 127.0.1.1 archlinux-radxa
+  hostname: archlinux-radxa
++also:
+- repo/archlinux-aarch64
+- common/arch-user

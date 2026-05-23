@@ -1,0 +1,30 @@
+pacman:
+  repo:
+  - name: forge
+    priority: 100
+    server: https://arch-linux-repo.drzee.net/arch/$$repo/os/$$arch
+    mirrorlist: distro:archlinux-aarch64
+    publickey: https://arch-linux-repo.drzee.net/arch/extra/os/aarch64/public.key
+    keyid: key@drzee.net
+  - name: core
+    priority: 110
+    server: https://arch-linux-repo.drzee.net/arch/$$repo/os/$$arch
+    mirrorlist: distro:archlinux-aarch64
+    publickey: https://arch-linux-repo.drzee.net/arch/extra/os/aarch64/public.key
+    keyid: key@drzee.net
+  - name: extra
+    priority: 120
+    server: https://arch-linux-repo.drzee.net/arch/$$repo/os/$$arch
+    mirrorlist: distro:archlinux-aarch64
+    publickey: https://arch-linux-repo.drzee.net/arch/extra/os/aarch64/public.key
+    keyid: key@drzee.net
+  trust:
+  - eworm@archlinux.org
+  - dvzrv@archlinux.org
+  - bluewind@archlinux.org
+  - demize@archlinux.org
+  - artafinde@archlinux.org
+  - anthraxx@archlinux.org
+  - foxboron@archlinux.org
+  install:
+  - core/archlinux-keyring
