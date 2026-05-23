@@ -62,7 +62,7 @@ def append_config(ctx: ArchBuilderContext, lines: list[str]):
 	lines.append("Color\n")
 	lines.append("CheckSpace\n")
 	lines.append("VerbosePkgLists\n")
-	lines.append("ParallelDownloads = 5\n")
+	lines.append("ParallelDownloads = 16\n")
 	lines.append("SigLevel = Required DatabaseOptional\n")
 	lines.append("LocalFileSigLevel = Optional\n")
 

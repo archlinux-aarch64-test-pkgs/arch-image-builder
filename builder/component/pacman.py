@@ -182,7 +182,7 @@ class Pacman:
 		lines.append("Color\n")
 		lines.append("CheckSpace\n")
 		lines.append("VerbosePkgLists\n")
-		lines.append("ParallelDownloads = 5\n")
+		lines.append("ParallelDownloads = 16\n")
 		lines.append(f"SigLevel = {siglevel}\n")
 		lines.append("LocalFileSigLevel = Optional\n")
 		self.append_repos(lines)
