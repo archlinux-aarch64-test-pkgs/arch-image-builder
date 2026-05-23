@@ -61,8 +61,8 @@ class PacmanRepoServer(SerializableDict):
 		else:
 			lines.append("# Original Repo\n")
 			log.debug(f"use original repo url {self.config_url}")
-		for _ in range(self.ctx.retry_count):
-			lines.append(f"Server = {self.config_url}\n")
+		# for _ in range(self.ctx.retry_count):
+		lines.append(f"Server = {self.config_url}\n")
 
 class PacmanRepo(SerializableDict):
 	ctx: ArchBuilderContext
