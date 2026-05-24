@@ -1,0 +1,18 @@
+arch: aarch64
+
+pacman:
+  install:
+  # For regulatory.db
+  - wireless-regdb
+
+  # Custom Kernel
+  - linux-radxa-qcom
+  - linux-radxa-qcom-dtbs
+  - linux-radxa-qcom-headers
+
+  # Need load kernel modules
+  - mkinitcpio
+
+kernel:
+  kernel: vmlinuz-linux-radxa-qcom
+  initramfs: initramfs-linux-radxa-qcom.img
