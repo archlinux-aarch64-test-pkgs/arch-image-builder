@@ -1,0 +1,118 @@
+name: radxa-dragon-q6a
+device: radxa-dragon-q6a
+arch: aarch64
+
+pacman:
+  install:
+  - linux-firmware-atheros
+  - linux-firmware-intel
+  - linux-firmware-qcom
+  - linux-firmware-realtek
+  - linux-firmware-whence
+
+  - linux-firmware-radxa-sc8280xp
+
+  - qrtr
+  - wireless-regdb
+  # GPU drivers
+  - vulkan-freedreno
+  - qcom-adreno-opencl-bin
+
+  replaces:
+  # ALSA UCM config
+  - old: alsa-ucm-conf
+    new: alsa-ucm-conf-radxa-qcom
+
+kernel:
+  cmdline:
+  - panic=30
+  - loglevel=4
+  - clk_ignore_unused
+  - console=ttyMSM0
+  - console=tty0
+  path: /boot
+
+mkinitcpio:
+  modules:
+#  - gpio_keys
+#  - leds_gpio
+#  - rtc_ds1307
+  - bam_dma
+  - camcc_sc7280
+  - dispcc_sc7280
+  - dwc3
+  - dwc3_qcom
+  - dwc3_qcom_legacy
+  - gpi
+  - gpucc_sc7280
+  - i2c_qcom_geni
+  - nvmem_qcom_spmi_sdam
+  - nvmem_qfprom
+  - nvmem_reboot_mode
+  - phy_qcom_qmp_combo
+  - phy_qcom_qmp_pcie
+  - phy_qcom_qmp_ufs
+  - phy_qcom_snps_femto_v2
+  - pinctrl_sc7280_lpass_lpi
+  - pinctrl_spmi_gpio
+  - pm8941_pwrkey
+  - q6apm_dai
+  - q6apm_lpass_dais
+  - q6prm
+  - q6prm_clocks
+  - qcom_cpufreq_hw
+  - qcom_hwspinlock
+  - qcom_pon
+  - qcom_rng
+  - qcom_rpmh_regulator
+  - qcom_spmi_adc5
+  - qcom_spmi_adc_tm5
+  - qcom_spmi_pmic
+  - qcom_spmi_temp_alarm
+  - qcom_tsens
+  - qcom_wdt
+  - qcrypto
+  - reset_qcom_aoss
+  - reset_qcom_pdc
+  - sdhci_msm
+  - spi_geni_qcom
+  - spi_nor
+  - spi_qcom_qspi
+  - spmi_pmic_arb
+  - ufs_qcom
+  - videocc_sc7280
+  - xhci_hcd
+  - xhci_plat_hcd
+  files:
+  - /usr/lib/firmware/qcom/qcm6490/qupv3fw.elf.zst
+
+sysconf:
+  chassis: embedded
+
++also:
+- os/archlinux-aarch64
+# - repo/archlinuxcn
+- repo/aarch64-addons
+
+# OpenSSH Server
+- packages/openssh
+
+# Text editor
+- packages/editor
+
+# Bluetooth related services
+- packages/bluez
+
+# FastRPC support
+- packages/fastrpc
+
+# Root without password
+- common/wheel-nopasswd
+
+# Reinitialize pacman-key when boot
+- common/pacman-init
+
+# Custom Mainline Kernel
+- packages/linux-radxa-qcom
+
+- shell/bash

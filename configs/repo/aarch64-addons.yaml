@@ -1,0 +1,8 @@
+pacman:
+  repo:
+  - name: aarch64-addons
+    priority: 200
+    server: https://github.com/archlinux-aarch64-test-pkgs/.repo-db/releases/download/latest
+    keyid: 23F1064A071B030F
+  install:
+  - aarch64-addons/aarch64-addons-keyring

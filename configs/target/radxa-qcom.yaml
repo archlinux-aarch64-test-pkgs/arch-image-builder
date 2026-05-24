@@ -1,0 +1,54 @@
+name: Radxa Dragon Qualcomm
+target: radxa-qcom
+arch: aarch64
+fstab:
+  dev: partuuid
+pacman:
+  install:
+  - fastfetch
+  - usbutils
+bootloader:
+  timeout: 3
+  method:
+  - embloader
+  # - systemd-boot
+mkinitcpio:
+  no_fallback: yes
+
+embloader:
+  devices:
+  - name: Radxa Dragon Q6A
+    match:
+    - field: smbios.system0.manufacturer
+      oper: equals
+      value: Radxa Computer Co., Ltd.
+    - field: smbios.system0.product_name
+      oper: equals
+      value: Radxa Dragon Q6A
+    profiles:
+    - radxa-dragon-q6a
+  - name: Radxa Dragon Q8B
+    match:
+    - field: smbios.system0.manufacturer
+      oper: equals
+      value: Radxa Computer Co., Ltd.
+    - field: smbios.system0.product_name
+      oper: equals
+      value: Radxa Dragon Q8B
+    profiles:
+    - radxa-dragon-q8b
+  profiles:
+    radxa-dragon-q6a:
+      dtb-id: qcs6490-radxa-dragon-q6a
+    radxa-dragon-q8b:
+      dtb-id: sc8280xp-radxa-dragon-q8b
+  devicetree:
+    default-dtb: /dtb/qcom/{dtb-id}.dtb
+
++also:
+- device/radxa-qcom
+- packages/resize-rootfs
+- packages/network-manager
+- packages/embloader
+- target/partitions/uefi-boot
+- common/default-boot-no-dtb

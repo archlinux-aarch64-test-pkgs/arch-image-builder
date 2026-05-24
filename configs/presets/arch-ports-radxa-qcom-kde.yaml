@@ -1,0 +1,7 @@
+package:
+  file: ArchLinux-Ports-Radxa-Qualcomm-KDE-${version}.7z
+  configs:
+  - target/radxa-qcom
+  - desktop/plasma
+  - locale/multi
+  - common/disk-8gb
