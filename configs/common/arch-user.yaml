@@ -6,6 +6,7 @@ sysconf:
       password: arch
       groups:
       - wheel
+      - kmem
     root:
       name: root
       uid: 0
