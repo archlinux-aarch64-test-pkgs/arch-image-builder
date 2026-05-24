@@ -1,0 +1,11 @@
+# Default boot option that lets the bootloader provide the device tree.
+bootloader:
+  items:
+  - type: linux
+    default: yes
+    id: ${distro.identifier.id}-${target}
+    name: ${distro.name} for ${name}
+    path: ${kernel.path}
+    kernel: /${kernel.kernel}
+    initramfs: /${kernel.initramfs}
+    cmdline: ${@kernel.cmdline}
