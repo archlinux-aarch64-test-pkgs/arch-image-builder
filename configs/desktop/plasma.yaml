@@ -5,19 +5,12 @@ pacman:
   - konsole
   - kate
   - dolphin
-  - sddm
+  - plasma-login-manager
   - packagekit-qt6
 systemd:
   default: graphical.target
   enable:
-  - sddm.service
-filesystem:
-  files:
-  - path: /etc/sddm.conf.d/breeze.conf
-    stage: pre-user
-    content: |
-      [Theme]
-      Current=breeze
+  - plasmalogin.service
 +also:
 # Ensure NetworkManager is enabled
 - packages/network-manager
