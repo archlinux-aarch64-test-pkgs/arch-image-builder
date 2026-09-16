@@ -32,11 +32,7 @@ pacman:
   install:
   - noto-fonts
   # Fonts for CJK language
-  - noto-fonts-cjk
-  - wqy-bitmapfont
-  - wqy-microhei
-  - wqy-microhei-lite
-  - wqy-zenhei
+  - adobe-source-han-sans-cn-fonts
 
   # Input method for Chinese
   - ibus

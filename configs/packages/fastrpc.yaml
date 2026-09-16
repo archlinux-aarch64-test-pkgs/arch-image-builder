@@ -11,3 +11,7 @@ sysconf:
     alarm:
       groups:
       - fastrpc
+
+systemd:
+  enable:
+  - qcom-fastrpc-setup-dsp.service

@@ -9,11 +9,20 @@ pacman:
   - linux-firmware-qcom
   - linux-firmware-realtek
   - linux-firmware-whence
-
   - linux-firmware-radxa-sc8280xp
+
+  - hexagon-dsp-binaries
+  - hexagon-dsp-binaries-radxa-dragon-q6a
+  - hexagon-dsp-binaries-radxa-dragon-q8b
 
   - qrtr
   - wireless-regdb
+
+  - libva-utils
+  - libva-v4l2
+  - haruna
+  - chromium
+
   # GPU drivers
   - vulkan-freedreno
   - qcom-adreno-opencl-bin
