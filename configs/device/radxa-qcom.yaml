@@ -19,7 +19,7 @@ pacman:
   - wireless-regdb
 
   - libva-utils
-  - libva-v4l2
+  - qcom-va-driver
   - haruna
   - chromium
 
